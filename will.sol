@@ -39,7 +39,7 @@ contract Will {
     mapping (address => uint) inheritance;
 
     // set values
-    function setInheritance(address payable wallet, uint amount) public {
+    function setInheritance(address payable wallet, uint amount) public onlyOwner { // only the owner is allow to set
         // add wallets to the famillyWallet
         famillyWallet.push(wallet);
         inheritance[wallet] = amount;
