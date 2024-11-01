@@ -53,4 +53,10 @@ contract Will {
         };
     }
 
+    // deceased trigger to run the function (automate) _ oracle switch simulation
+    function deceased() public onlyOwner {
+        isDeceased = true; // set to true as init at false, change status
+        payout(); // call function 
+    }
+
 }
