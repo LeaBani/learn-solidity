@@ -47,15 +47,15 @@ contract Will {
 
     // now, automate the paiements based on their wallet address (transfer)
     function payout() private mustBeDeceased { // only exectued if condition is true (modifier)
-        for (i=0; i<famillyWallet.length; i++) 
+        for (uint i=0; i<famillyWallet.length; i++) 
         {
             famillyWallet[i].transfer(inheritance[famillyWallet[i]]); // transfert from the contract address to the receiver address
-        };
+        }
     }
 
     // deceased trigger to run the function (automate) _ oracle switch simulation
-    function deceased() public onlyOwner {
-        isDeceased = true; // set to true as init at false, change status
+    function hasDeceased() public onlyOwner {
+        deceased = true; // set to true as init at false, change status
         payout(); // call function 
     }
 
