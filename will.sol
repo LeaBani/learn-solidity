@@ -13,7 +13,7 @@ contract Will {
     bool    deceased;
 
     // special type of function that executes for each contract
-    constructor() payable public { // visible even outside this contract
+    constructor() payable { // visible even outside this contract
         // initialize variables
         owner = msg.sender; // built in method represenation of who is calling the address, here, the grand father
         fortune = msg.value; // built in global method, how much Ether is being sent?
