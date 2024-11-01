@@ -45,4 +45,12 @@ contract Will {
         inheritance[wallet] = amount;
     }
 
+    // now, automate the paiements based on their wallet address (transfer)
+    function payout() private mustBeDeceased { // only exectued if condition is true (modifier)
+        for (i=0; i<famillyWallet.length; i++) 
+        {
+            famillyWallet[i].transfer(inheritance[famillyWallet[i]]); // transfert from the contract address to the receiver address
+        };
+    }
+
 }
